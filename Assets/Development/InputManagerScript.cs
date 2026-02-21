@@ -11,7 +11,7 @@ public class InputManagerScript : MonoBehaviour
             car.Moving(1);
         }
 
-        if (Keyboard.current.sKey.isPressed)
+        else if (Keyboard.current.sKey.isPressed)
         {
             car.Moving(-1);
         }
@@ -21,7 +21,7 @@ public class InputManagerScript : MonoBehaviour
             car.Turning(1);
         }
 
-        if (Keyboard.current.dKey.isPressed)
+        else if (Keyboard.current.dKey.isPressed)
         {
             car.Turning(-1);
         }

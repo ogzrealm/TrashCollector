@@ -15,5 +15,7 @@ public class CarControlScript : MonoBehaviour
     {
         var turn = turnValue * turnSpeed;
         transform.Rotate(0,0,turn*Time.deltaTime);
+        Debug.Log(turn);
+        
     }
 }
