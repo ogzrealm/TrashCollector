@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - DumpTag
+  - PickupBoost
   layers:
   - Default
   - TransparentFX

@@ -8,15 +8,17 @@ public class CarControlScript : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float turnSpeed;
-    private float origiinalSpeed;
+    private float originalSpeed;
     private bool isSlowed = false;
+    private bool isBoosted = false;
     private IEnumerator dumpRoutine;
+    private IEnumerator boostedRoutine;
     private Rigidbody2D _rb;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        origiinalSpeed = moveSpeed;
+        originalSpeed  = moveSpeed;
     }
 
     public void Moving(float moveValue)
@@ -46,20 +48,44 @@ public class CarControlScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PickupBoost"))
+        {
+            if(isBoosted && boostedRoutine != null)
+            {
+                StopCoroutine(boostedRoutine);
+            }
+            boostedRoutine = Boosted();
+            StartCoroutine(boostedRoutine);
+        }
+    }
+
     IEnumerator Slow()
     {
-        moveSpeed=origiinalSpeed*0.5f;
+        moveSpeed=originalSpeed*0.5f;
         isSlowed = true;
         Debug.Log("Your Speed is Half");
         
         yield return new WaitForSeconds(1.5f);
         
         isSlowed = false;
-        moveSpeed = origiinalSpeed;
+        moveSpeed = originalSpeed;
         Debug.Log("Your Speed is Normal");
         dumpRoutine = null;
         
     }
-    
+
+    IEnumerator Boosted()
+    {
+        moveSpeed=originalSpeed * 1.5f;
+        isBoosted = true;
+        
+        yield return new WaitForSeconds(2f);
+
+        isBoosted = false;
+        moveSpeed = originalSpeed;
+        boostedRoutine = null;
+    }
     
 }
