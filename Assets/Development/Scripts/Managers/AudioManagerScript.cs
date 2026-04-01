@@ -6,6 +6,7 @@ public class AudioManagerScript : MonoBehaviour
     private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _audioClips;
     
+    
 
     private void Awake()
     {
@@ -24,9 +25,23 @@ public class AudioManagerScript : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void carEngineSound()
+    public void TrashPickUpSound()
     {
-        _audioSource.clip=_audioClips[1];
-        _audioSource.Play();
+        _audioSource.PlayOneShot(_audioClips[0]);
     }
+
+    public void TrashDropSound()
+    {
+        _audioSource.PlayOneShot(_audioClips[1]);
+    }
+    public void DumpSound()
+    {
+        if (!_audioSource.isPlaying)
+        {
+            _audioSource.PlayOneShot(_audioClips[2]);
+        }
+        
+        
+    }
+    
 }

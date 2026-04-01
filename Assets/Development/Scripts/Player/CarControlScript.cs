@@ -16,6 +16,7 @@ public class CarControlScript : MonoBehaviour
     private Rigidbody2D _rb;
     private BoosterSpawnScript _spawnScript;
     private AudioSource _engineSource;
+    private float _enginePitch;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class CarControlScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         originalSpeed  = moveSpeed;
         _engineSource= GetComponent<AudioSource>();
-        
+        _enginePitch=_engineSource.pitch;
     }
 
     public void Moving(float moveValue)
@@ -49,6 +50,7 @@ public class CarControlScript : MonoBehaviour
             {
                 StopCoroutine(dumpRoutine);
             }
+            AudioManagerScript.instance.DumpSound();
             dumpRoutine = Slow();
             StartCoroutine(dumpRoutine);
         }
@@ -94,6 +96,11 @@ public class CarControlScript : MonoBehaviour
         isBoosted = false;
         moveSpeed = originalSpeed;
         boostedRoutine = null;
+    }
+
+    public void ResetPitch()
+    {
+        _engineSource.pitch = _enginePitch;
     }
     
 }

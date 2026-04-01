@@ -10,8 +10,12 @@ public class InputManagerScript : MonoBehaviour
         {
             car.Moving(1);
         }
+        else
+        {
+            car.ResetPitch();
+        }
 
-        else if (Keyboard.current.sKey.isPressed)
+        if (Keyboard.current.sKey.isPressed)
         {
             car.Moving(-1);
         }
@@ -21,7 +25,7 @@ public class InputManagerScript : MonoBehaviour
             car.Turning(1);
         }
 
-        else if (Keyboard.current.dKey.isPressed)
+        if (Keyboard.current.dKey.isPressed)
         {
             car.Turning(-1);
         }

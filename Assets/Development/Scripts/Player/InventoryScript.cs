@@ -34,6 +34,7 @@ public class InventoryScript : MonoBehaviour
         {
             if (currentTrash > 0)
             {
+                AudioManagerScript.instance.TrashDropSound();
                 addScore();
                 Debug.Log("Delivered Trash: " + currentTrash);
                 currentTrash = 0;

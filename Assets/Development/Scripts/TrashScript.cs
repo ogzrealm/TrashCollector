@@ -16,9 +16,9 @@ public class TrashScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && _inventory.isFullCapasity==false)
         {
+            AudioManagerScript.instance.TrashPickUpSound();
             _inventory.addInventory();
             _trashSpawn.SingleTrashSpawn();
-            Debug.Log("Trash Spawned");
             Destroy(gameObject);
         }
     }
