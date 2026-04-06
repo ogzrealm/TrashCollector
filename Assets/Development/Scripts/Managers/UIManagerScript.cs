@@ -9,6 +9,7 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI warningText;
     private IEnumerator warningCoroutine;
+    [SerializeField] private RectTransform scoreTxtScale;
 
     private void Start()
     {
@@ -18,6 +19,18 @@ public class UIManagerScript : MonoBehaviour
     public void addtoTxtScore(int score)
     {
         scoreText.text = "Score: " + score.ToString();
+        StartCoroutine(scoreTextAnimation());
+    }
+
+    private IEnumerator scoreTextAnimation()
+    {
+        Vector3 originalScale = scoreTxtScale.localScale;
+        scoreTxtScale.localScale = originalScale * 1.2f;
+        
+        yield return new WaitForSeconds(0.2f);
+        
+        scoreTxtScale.localScale = originalScale;
+
     }
     public void addtoTxtTime(float time)
     {

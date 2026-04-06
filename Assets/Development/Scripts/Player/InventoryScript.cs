@@ -24,6 +24,7 @@ public class InventoryScript : MonoBehaviour
         else if (currentTrash < _maxTrash && !isFullCapasity)
         {
             currentTrash++;
+            isFullCapasity = false;
             Debug.Log(currentTrash);
         }
         
