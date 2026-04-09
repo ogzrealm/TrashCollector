@@ -16,17 +16,18 @@ public class InventoryScript : MonoBehaviour
 
     public void addInventory()
     {
-        if (currentTrash == _maxTrash)
+        currentTrash++;
+        if (currentTrash >= _maxTrash)
         {
             isFullCapasity = true;
             uiManager.capacityWarning();
+            AudioManagerScript.instance.CapacityWarningSound(true);
+            return;
         }
-        else if (currentTrash < _maxTrash && !isFullCapasity)
-        {
-            currentTrash++;
-            isFullCapasity = false;
-            Debug.Log(currentTrash);
-        }
+        
+        isFullCapasity = false;
+        Debug.Log(currentTrash);
+        
         
     }
 
@@ -41,7 +42,9 @@ public class InventoryScript : MonoBehaviour
                 Debug.Log("Delivered Trash: " + currentTrash);
                 currentTrash = 0;
                 uiManager.silencecapacityWarning();
+                AudioManagerScript.instance.CapacityWarningSound(false);
                 isFullCapasity = false;
+                
             }
             
         }

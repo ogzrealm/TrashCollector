@@ -46,5 +46,22 @@ public class AudioManagerScript : MonoBehaviour
     {
         _audioSource.PlayOneShot(_audioClips[3]);
     }
+
+    public void CapacityWarningSound(bool soundLoop)
+    {
+        if (soundLoop)
+        {
+            _audioSource.clip=_audioClips[4];
+            _audioSource.loop = true;
+            _audioSource.Play();
+        }
+        else
+        {
+            _audioSource.loop = false;
+        }
+    }
+    
+       
+    
     
 }
