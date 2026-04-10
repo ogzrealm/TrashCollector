@@ -27,7 +27,7 @@ public class TrashHoleScript : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         var newColor=_trashholeSprite.color=new Color32(227, 151, 227, 255);
         _trashholeSprite.color=newColor;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.6f);
         _trashholeSprite.color = currentColor;
 
     }

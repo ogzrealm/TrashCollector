@@ -8,10 +8,12 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private int currentTrash;
     [SerializeField] private int score;
     private UIManagerScript uiManager;
+    private TrashHoleScript TrashHoleScript;
 
     private void Start()
     {
         uiManager=FindObjectOfType<UIManagerScript>();
+        TrashHoleScript = FindObjectOfType<TrashHoleScript>();
     }
 
     public void addInventory()
@@ -45,9 +47,9 @@ public class InventoryScript : MonoBehaviour
                 currentTrash = 0;
                 uiManager.silencecapacityWarning();
                 uiManager.StationDropTextFalse();
+                TrashHoleScript.HoleColorChange();
                 AudioManagerScript.instance.CapacityWarningSound(false);
                 isFullCapasity = false;
-                
             }
             
         }
