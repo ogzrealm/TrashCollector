@@ -9,6 +9,7 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI warningText;
+    [SerializeField] private TextMeshProUGUI inventoryText;
     private IEnumerator warningCoroutine;
     private IEnumerator dropHereCoroutine;
     [SerializeField] private RectTransform scoreTxtScale, timeTxtScale;
