@@ -5446,7 +5446,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'CAPACITY FULL
 
-    GO TO STATION'
+    GO TO STATION!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 426101e48ef1c1542a323b7d551f17dd, type: 2}
   m_sharedMaterial: {fileID: -3301193118460112063, guid: 426101e48ef1c1542a323b7d551f17dd, type: 2}
@@ -20289,8 +20289,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1006925397}
-  - {fileID: 1835701167}
   - {fileID: 1673210200}
+  - {fileID: 1835701167}
   - {fileID: 188743674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27725,7 +27725,7 @@ MonoBehaviour:
   scoreText: {fileID: 1006925398}
   timeText: {fileID: 1673210201}
   warningText: {fileID: 188743675}
-  inventoryText: {fileID: 0}
+  inventoryText: {fileID: 1835701168}
   scoreTxtScale: {fileID: 1006925397}
   timeTxtScale: {fileID: 1673210200}
   dropHereText: {fileID: 878546914}

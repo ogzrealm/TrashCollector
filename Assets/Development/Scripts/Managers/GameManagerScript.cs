@@ -38,10 +38,23 @@ public class GameManagerScript : MonoBehaviour
             Debug.Log("Game Over");
             time = 0;
             Time.timeScale = 0;
+            CarControlScript car=FindObjectOfType<CarControlScript>();
+            car.ResetPitch();
+            car.StopEngine();
         }
     }
+
+
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GameOver()
+    {
+        if(Time.timeScale == 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 }

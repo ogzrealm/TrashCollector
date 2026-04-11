@@ -114,5 +114,9 @@ public class CarControlScript : MonoBehaviour
         _engineSource.pitch = _enginePitch;
     }
     
-    
+    public void StopEngine()
+    {
+        _engineSource.Stop();
+    }
+
 }

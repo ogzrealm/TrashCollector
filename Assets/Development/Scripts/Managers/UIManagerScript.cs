@@ -26,13 +26,17 @@ public class UIManagerScript : MonoBehaviour
         }
 
         instance = this;
-
     }
 
     public void addtoTxtScore(int score)
     {
         scoreText.text = "Score: " + score.ToString();
         StartCoroutine(ScoreTextAnimation());
+    }
+
+    public void addtoTxtInventory(int inventory)
+    {
+        inventoryText.text = "Inventory: " + inventory.ToString() +"/5";
     }
 
     public IEnumerator ScoreTextAnimation()

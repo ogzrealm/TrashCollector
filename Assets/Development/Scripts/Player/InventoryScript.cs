@@ -21,6 +21,7 @@ public class InventoryScript : MonoBehaviour
     public void addInventory()
     {
         currentTrash++;
+        uiManager.addtoTxtInventory(currentTrash);
         if (currentTrash >= _maxTrash)
         {
             isFullCapasity = true;
@@ -34,7 +35,8 @@ public class InventoryScript : MonoBehaviour
         isFullCapasity = false;
         Debug.Log(currentTrash);
         
-        
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,7 +56,7 @@ public class InventoryScript : MonoBehaviour
                 AudioManagerScript.instance.CapacityWarningSound(false);
                 isFullCapasity = false;
             }
-            
+            uiManager.addtoTxtInventory(currentTrash);
         }
     }
 
