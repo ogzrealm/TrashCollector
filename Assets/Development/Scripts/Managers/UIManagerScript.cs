@@ -4,6 +4,7 @@ using TMPro;
 using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class UIManagerScript : MonoBehaviour
@@ -151,6 +152,22 @@ public class UIManagerScript : MonoBehaviour
             highScore=score;
         }
         highScoreText.text = "High Score: " + highScore.ToString();
+    }
+
+    public void GameOverStatus()
+    {
+        scoreText.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
+        inventoryText.gameObject.SetActive(false);
+        GameOverPanel.SetActive(true);
+        
+    }
+
+    public void RestartGameButton()
+    {
+        AudioManagerScript.instance.ResetButtonSound();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

@@ -31,8 +31,9 @@ public class GameManagerScript : MonoBehaviour
     
     private void countdown()
     {
+        if (time <= 0) return;
         time -= Time.deltaTime;
-        uiManager.addtoTxtTime(time);
+        
         if (time <= 0)
         {
             time = 0;
@@ -41,12 +42,15 @@ public class GameManagerScript : MonoBehaviour
             car.ResetPitch();
             car.StopEngine();
             GameOver();
+            return;
         }
+        uiManager.addtoTxtTime(time);
     }
 
 
     public void restartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -54,7 +58,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if(Time.timeScale == 0)
         {
-            Debug.Log("Game Over");
+            UIManagerScript.instance.GameOverStatus();
         }
     }
 }

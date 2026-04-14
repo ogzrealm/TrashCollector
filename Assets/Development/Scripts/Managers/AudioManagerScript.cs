@@ -5,6 +5,7 @@ public class AudioManagerScript : MonoBehaviour
     public static AudioManagerScript instance;
     private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] private AudioClip resetButtonSound;
     
     
 
@@ -59,6 +60,11 @@ public class AudioManagerScript : MonoBehaviour
         {
             _audioSource.loop = false;
         }
+    }
+
+    public void ResetButtonSound()
+    {
+        _audioSource.PlayOneShot(resetButtonSound);
     }
     
        

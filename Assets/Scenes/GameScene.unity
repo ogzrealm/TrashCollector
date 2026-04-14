@@ -4421,7 +4421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 159819452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1148383187}
+        m_TargetAssemblyTypeName: UIManagerScript, Assembly-CSharp
+        m_MethodName: RestartGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &159819452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,6 +5807,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a5d1106471e09924dbef789b1ab52c5c, type: 3}
   - {fileID: 8300000, guid: 60015e1c01d193446887bb438c16dc67, type: 3}
   - {fileID: 8300000, guid: e36828a4e1cd936439ea339ad30b649a, type: 3}
+  resetButtonSound: {fileID: 8300000, guid: 34a3730a201a8434fb8dbc4bd110bcfe, type: 3}
 --- !u!1 &191291681
 GameObject:
   m_ObjectHideFlags: 0
@@ -27990,7 +28003,7 @@ MonoBehaviour:
   dropHereText: {fileID: 878546914}
   finalScoreText: {fileID: 518505013}
   highScoreText: {fileID: 1156900902}
-  GameOverPanel: {fileID: 0}
+  GameOverPanel: {fileID: 1332374145}
 --- !u!1 &1150038290
 GameObject:
   m_ObjectHideFlags: 0
@@ -32398,7 +32411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1332374146
 RectTransform:
   m_ObjectHideFlags: 0
